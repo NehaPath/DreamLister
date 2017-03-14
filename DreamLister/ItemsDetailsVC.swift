@@ -17,6 +17,7 @@ class ItemsDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     @IBOutlet weak var detailsField: CustomTextField!
     
     var stores = [Store]()
+    var itemToEdit: Item?
     
 
     override func viewDidLoad() {
@@ -46,6 +47,10 @@ class ItemsDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
 //        ad.saveContext()
         
         getStores()
+        
+        if itemToEdit != nil {
+            loadItemData()
+        }
 
     }
     
@@ -87,6 +92,66 @@ class ItemsDetailsVC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
 
     
+    @IBAction func savePressed(_ sender: UIButton) {
+        
+        var item: Item!
+        
+        if itemToEdit == nil {
+            
+            item = Item(context: context)
+        } else {
+            
+            item = itemToEdit
+            
+        }
+        
+        if let title = titleField.text {
+            item.title = title
+        }
+        
+        if let price = priceField.text {
+            item.price = (price as NSString).doubleValue
+        
+        }
+        
+        if let details = detailsField.text {
+            item.details = details
+        }
+        
+        item.toStore = stores[storePicker.selectedRow(inComponent: 0)]
+        
+        ad.saveContext()
+        
+        _ = navigationController?.popViewController(animated: true)
+        
+    }
+    
+    func loadItemData() {
+        if let item = itemToEdit {
+            
+            titleField.text = item.title
+            priceField.text = "\(item.price)"
+            detailsField.text = item.details
+            
+            if let store = item.toStore {
+                
+                var index = 0
+                repeat {
+                    
+                    let s = stores[index]
+                    if s.name == store.name {
+                        
+                        storePicker.selectRow(index, inComponent: 0, animated: false)
+                        break
+                    }
+                    index += 1
+                    
+                } while (index < stores.count)
+                
+            }
+        }
+    }
+  
     
     
     

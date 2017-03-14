@@ -39,7 +39,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="wY0-XR-qBj" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="150" id="wY0-XR-qBj" customClass="ItemCell" customModule="DreamLister" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wY0-XR-qBj" id="6aU-FR-FAM">
@@ -155,7 +155,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mmJ-ib-vq6" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="gGc-Jf-Iqb">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGc-Jf-Iqb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -249,6 +249,9 @@
                                 <state key="normal" title="Save Item">
                                     <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="savePressed:" destination="eCA-GR-p4o" eventType="touchUpInside" id="VSW-dx-Paa"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Pl-dr-dRK">
                                 <rect key="frame" x="16" y="339" width="343" height="216"/>
