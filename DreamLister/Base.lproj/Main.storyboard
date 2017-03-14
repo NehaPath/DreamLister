@@ -173,7 +173,7 @@
             </objects>
             <point key="canvasLocation" x="159" y="139"/>
         </scene>
-        <!--Title-->
+        <!--Add/Edit-->
         <scene sceneID="W5T-ZS-MZ6">
             <objects>
                 <viewController id="eCA-GR-p4o" customClass="ItemsDetailsVC" customModule="DreamLister" customModuleProvider="target" sceneMemberID="viewController">
@@ -282,11 +282,17 @@
                             <constraint firstItem="mzj-Ov-ii5" firstAttribute="top" secondItem="QOV-Zq-cRR" secondAttribute="bottom" constant="18" id="ziS-a4-w7q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Evm-Ze-7nD">
+                    <navigationItem key="navigationItem" title="Add/Edit" id="Evm-Ze-7nD">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="L7Y-jb-VZP">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="detailsField" destination="AzS-Lg-gwF" id="msz-K4-YT1"/>
+                        <outlet property="priceField" destination="TDf-dJ-ssJ" id="viR-Y9-dRR"/>
+                        <outlet property="storePicker" destination="2Pl-dr-dRK" id="pc4-4O-6iU"/>
+                        <outlet property="titleField" destination="mzj-Ov-ii5" id="bYs-Vh-SBO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oc7-Ze-YYR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
