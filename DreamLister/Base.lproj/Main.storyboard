@@ -33,6 +33,9 @@
                                     <segment title="Title"/>
                                 </segments>
                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="segmentChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Lwu-DU-lFI"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hx1-mO-M0D">
                                 <rect key="frame" x="16" y="132" width="343" height="535"/>
@@ -185,7 +188,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="Ghe-uY-mRe">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imagePick" translatesAutoresizingMaskIntoConstraints="NO" id="Ghe-uY-mRe">
                                 <rect key="frame" x="16" y="72" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="mki-wL-UWN"/>
@@ -198,6 +201,9 @@
                                     <constraint firstAttribute="height" constant="100" id="BRF-5D-YoD"/>
                                     <constraint firstAttribute="width" constant="100" id="BRN-LS-VH2"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="addImage:" destination="eCA-GR-p4o" eventType="touchUpInside" id="bpZ-HS-pJX"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mzj-Ov-ii5" customClass="CustomTextField" customModule="DreamLister" customModuleProvider="target">
                                 <rect key="frame" x="124" y="82" width="235" height="40"/>
@@ -288,12 +294,16 @@
                     <navigationItem key="navigationItem" title="Add/Edit" id="Evm-Ze-7nD">
                         <barButtonItem key="rightBarButtonItem" systemItem="trash" id="L7Y-jb-VZP">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="deletePressed:" destination="eCA-GR-p4o" id="arc-kr-KfQ"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="detailsField" destination="AzS-Lg-gwF" id="msz-K4-YT1"/>
                         <outlet property="priceField" destination="TDf-dJ-ssJ" id="viR-Y9-dRR"/>
                         <outlet property="storePicker" destination="2Pl-dr-dRK" id="pc4-4O-6iU"/>
+                        <outlet property="thumbImg" destination="Ghe-uY-mRe" id="985-9I-rqa"/>
                         <outlet property="titleField" destination="mzj-Ov-ii5" id="bYs-Vh-SBO"/>
                     </connections>
                 </viewController>
