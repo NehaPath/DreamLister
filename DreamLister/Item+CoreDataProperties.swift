@@ -25,3 +25,6 @@ extension Item {
     @NSManaged public var toStore: Store?
 
 }
+
+
+
